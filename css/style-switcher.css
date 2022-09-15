@@ -63,7 +63,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    cursor: crosshair;
 }
+
 
 .style-switcher .colors span
 {
@@ -79,9 +81,19 @@
     background: #ec1839;
 }
 
+.style-switcher .color-1:hover
+{
+    transform: scale(1.10);
+}
+
 .style-switcher .color-2
 {
     background: #fa5b0f;
+}
+
+.style-switcher .color-2:hover
+{
+    transform: scale(1.10);
 }
 
 .style-switcher .color-3
@@ -89,12 +101,27 @@
     background: #37B182;
 }
 
+.style-switcher .color-3:hover
+{
+    transform: scale(1.10);
+}
+
 .style-switcher .color-4
 {
     background: #1854B4;
 }
 
+.style-switcher .color-4:hover
+{
+    transform: scale(1.10);
+}
+
 .style-switcher .color-5
 {
     background: #f021B2;
+}
+
+.style-switcher .color-5:hover
+{
+    transform: scale(1.10);
 }

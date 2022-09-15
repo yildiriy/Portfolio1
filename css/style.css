@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+html {
+    scroll-behavior: smooth;
+  }
 
 :root
 {
@@ -40,6 +43,10 @@ body
     box-sizing: border-box;
 }
 
+.active
+{
+    color: var(--skin-color); 
+}
 ul
 {
     list-style: none;
@@ -73,6 +80,10 @@ ul
     width: 100%;
     margin: auto;
 }
+
+a:link {
+    color:inherit;
+ }
 .section .container
 {
     padding-top: 60px;
@@ -280,10 +291,11 @@ ul
     padding: 5px 15px;
 }
 
-.aside .nav li a.active
+.aside .nav li a:hover
 {
     color: var(--skin-color);
 }
+
 
 .aside .nav li a i
 {
@@ -332,6 +344,7 @@ h3.hello span
 .home-info p 
 {
     margin-bottom: 70px;
+    line-break: ".";
     font-size: 20px;
     color: var(--text-black-700);
 }
@@ -706,15 +719,85 @@ h3.hello span
     color: var(--text-black-900);
     text-align: center;
     font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.contact-advice
+{
+    color: var(--text-black-700);
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
     margin-bottom: 60px;
+}
+
+.contact .contact-info-item-inner
+{
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+    padding: 30px 15px;
+    text-align: center;
+    box-shadow: 20px 20px rgba(0,0,0,.15);
+    transition: all .4s ease;
+}
+
+.contact .contact-info-item-inner .icon
+{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 30px;
+    text-align: center;
+    transition: all 0.3 ease;
+}
+
+.contact .contact-info-item-inner .icon .fa
+{
+    font-size: 40px;
+    line-height: 60px;
+    color: var(--skin-color); 
+    transition: all 0.3s ease;
+}
+
+.contact .contact-info-item-inner .icon .fa-brands
+{
+    font-size: 40px;
+    line-height: 60px;
+    color: var(--skin-color); 
+    transition: all 0.3s ease;
+}
+
+.contact .contact-info-item-inner:hover
+{
+    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+    box-shadow: 10px 10px rgba(0,0,0,.25);
+}
+
+.contact .contact-info-item-inner:hover .icon
+{
+    background: var(--skin-color);
+    
+}
+
+.contact .contact-info-item-inner:hover .icon .fa
+{
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.contact .contact-info-item-inner:hover .icon .fa-brands
+{
+    font-size: 25px;
+    color: #ffffff;
 }
 
 .contact .contact-info-item
 {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
-    text-align: center;
-    margin-bottom: 60px;
+margin-bottom: 30px;
+flex: 0 0 33.33%;
+max-width: 33.33%;
 }
 
 .contact .contact-info-item .icon
@@ -728,17 +811,42 @@ h3.hello span
     color: var(--skin-color);
 }
 
+.contact .contact-info-item .icon .fa-brands
+{
+    font-size: 25px;
+    color: var(--skin-color);
+}
+
+.contact .contact-info-item .icon .fa-brands:hover{
+    transform:scale(3);;
+    cursor: pointer;
+    color: var(--text-black-900); 
+}
+
+.contact .contact-info-item .icon .fa:hover{
+    transform:scale(3);
+    cursor: pointer; 
+    color: var(--text-black-900);
+    
+}
+
 .contact .contact-info-item h4
 {
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 700;
     color: var(--text-black-900);
     text-transform: capitalize;
     margin: 15px 0 15px;
 }
 
-.contact .contact-info-item p
-{
+.contact .contact-info-item p {
+    font-size: 16px;
+    line-height: 25px;
+    color: var(--text-black-700);
+    font-weight: 400;
+}
+
+.contact .contact-info-item .lnk {
     font-size: 16px;
     line-height: 25px;
     color: var(--text-black-700);
@@ -835,10 +943,10 @@ h3.hello span
 
 @media (max-width:767px)
 {
-    .contact .contact-form .col-6
-    .contact .contact-info-item
-    .portfolio .portfolio-item
-    .service .service-item
+    .contact .contact-form .col-6,
+    .contact .contact-info-item,
+    .portfolio .portfolio-item,
+    .service .service-item,
     .about .about-content .experience,
     .about .about-content .education,
     .about .about-content .skills,

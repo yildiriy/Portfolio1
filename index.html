@@ -17,6 +17,7 @@
 
 </head>
 <body>
+    
     <!-- ================ Main container Start ==================-->
     <div class="main-container">
         <!--===== Aside Start ======-->
@@ -45,13 +46,15 @@
                     <div class="row">
                         <div class="home-info padd-15">
                             <h3 class="hello">Hello, my name is <span class="name">Yusuf Yildirim</span></h3>
-                            <h3 class="my-profession">I'm a <span class="typing"> Test engineer</span></h3>
-                            <p> I'm a Mechatronics Engineer with extensive experience for over 4 years. My expertise is to
-                                test and validate the comformity of technical products...</p>
+                            <h3 class="my-profession"><span class="typing"> Test engineer</span></h3>
+                            <p> Welcome to my website.
+                               <br> I'm really passionated by challenges.
+                               <br> If you want to learn more about me, scroll down.
+                            </p>
                             <a href="#contact" class="btn hire-me">Hire Me</a>
                         </div>
                         <div class="home-img padd-15">
-                            <img src="Photo-id.jpg" alt="">
+                            <img src="portrait.avif" alt="">
                   F      </div>
                     </div>
                 </div>
@@ -86,18 +89,18 @@
                                             <p>Age: <span>27</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Email: <span>yildiri@gmail.com</span></p>
+                                            <p>Email: <span>yildiriy@gmail.com</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Phone: <span>+33 50 30 03 70</span></p>
+                                            <p>Phone: <span>+33 7 50 30 03 70</span></p>
                                         </div>
                                         <div class="info-item padd-15">
                                             <p>City: <span>Lyon, France</span></p>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="buttons padd-15">
-                                            <a href="#" class="btn">Download CV</a>
+                                        <div class="buttons padd-15 hid">
+                                            <a href="#" class="btn hidden>Download CV</a>
                                             <a href="#contact" class="btn hire-me">Hire me</a>
                                         </div>
                                     </div>
@@ -349,61 +352,71 @@
                     </div>
                     <h3 class="contact-title padd-15">Have you any question</h3>
                     <h4 class="contact-sub-title padd-15">I'm at your services</h4>
+                    <h5 class="contact-advice padd-15">Click on the logo to proceed</h5>
                     <div class="row">
                         <!--=== Contact info item start-->
                         <div class="contact-info-item padd-15">
-                            <div class="icon"><i class="fa fa-envelope"></i></div>
-                            <h4>Email</h4>
-                            <p>yildiriy@gmail.com</p>
+                            <div class="contact-info-item-inner">
+                                <div class="icon"><a href="mailto:yildiriy@gmail.fr" class="fa fa-envelope"></a></div>
+                                <h4>Email</h4>
+                                <p hidden>yildiriy@gmail.com</p>
+                            </div>
                         </div>
                         <!--=== Contact info item End-->
                         <div class="contact-info-item padd-15">
-                            <div class="icon"><i class="fa fa-phone"></i></div>
-                            <h4>Phone</h4>
-                            <p>+33 7 50 30 03 70</p>
+                            <div class="contact-info-item-inner">
+                                <div class="icon"><a href="https://drive.google.com/file/d/13a5c_6DNgB41Yx_nxJ0jLNZCJFaZwPrX/view?usp=sharing" class="fa fa-file"></a></div>
+                                <h4>CV</h4>
+                                <p hidden>Click to open my CV</p>
+                            </div>
                         </div>
                         <!--=== Contact info item End-->
                         <div class="contact-info-item padd-15">
-                            <div class="icon"><i class="fa fa-marker"></i></div>
-                            <h4>Office</h4>
-                            <p>Lyon</p>
+                            <div class="contact-info-item-inner">
+                                <div class="icon"><a href="https://fr.linkedin.com/in/yy69" class="fa-brands fa-linkedin-in"></a></div>
+                                <h4>Linkedin</h4>
+                                <p hidden>/YY69</p>
+                            </div>
                         </div>
                         <!--=== Contact info item End-->
                     </div>
                     <h3 class="contact-title padd-15"> SEND ME AN EMAIL</h3>
                     <h4 class="contact-sub-title padd-15"> I'M VERY RESPONSIVE TO MESSAGES</h4>
+
                     <!--===== Contact Form-->
                     <div class="row">
-                        <div class="contact-form padd-15">
-                            <div class="row">
-                                <div class="form-item col-6 padd-15">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Name">
+                        <form method="post" action="contact.php">
+                            <div class="contact-form padd-15 hidden">
+                                <div class="row">
+                                    <div class="form-item col-6 padd-15">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Name" id="name">
+                                        </div>
+                                    </div>
+                                    <div class="form-item col-6 padd-15">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Email" id="email">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-item col-6 padd-15">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email">
+                                <div class="row">
+                                    <div class="form-item col-12 padd-15">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Subject" id="subject">
+                                        </div>
                                     </div>
+                                    <div class="form-item col-12 padd-15">
+                                    <div class="form-group">
+                                        <textarea name="message" class="form-control" id="message" placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-item col-12 padd-15">
+                                     <button type="submit" class="btn" value="Send">Send Message</button>
+                                 </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="form-item col-12 padd-15">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Subject">
-                                    </div>
-                                </div>
-                                <div class="form-item col-12 padd-15">
-                                    <div class="form-group">
-                                        <textarea name="" class="form-control" id="" placeholder="Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-item col-12 padd-15">
-                                    <button type="submit" class="btn">Send Message</button>
-                                </div>
-                            </div>
+                        </form>
                         </div>
-                    </div>
                 </div>
             </section>
             <!-- ==== Contact section End-->
@@ -435,5 +448,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
+
+
+    
 </body>
 </html>
