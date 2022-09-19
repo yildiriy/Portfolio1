@@ -78,15 +78,20 @@ ul
     animation: fade-up 1s ease-out;
  }
 
-.fade-bottom 
+
+.spin
 {
-    animation: fade-bottom 0.8s ease-out;
+    animation-name: spin;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
 .active.fade-bottom 
 {
     animation: fade-bottom 0.8s ease-out;
 }
+
 .active.fade-left 
 {
     animation: fade-left 0.8s ease-out;
@@ -408,7 +413,7 @@ h3.hello span
 {
     margin-bottom: 70px;
     line-break: ".";
-    font-size: 20px;
+    font-size: 15px;
     color: var(--text-black-700);
 }
 .home .home-img
@@ -492,6 +497,50 @@ h3.hello span
 {
     flex: 0 0 50%;
     max-width: 50%;
+}
+
+.about .about-content .personal-info .info-item
+{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.about .about-content .personal-info  .langage-title
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    border-bottom: 1px solid var(--skin-color);
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+}
+
+.about .about-content .personal-info .langage-flag
+{
+    margin-top: 15px;
+    margin-left: 15px;
+    flex: 0 0 30%;
+    max-width: 100%;
+    padding: 10px;
+
+}
+
+.about .about-content .personal-info .langage-flag img
+{
+    margin-left: 50px;
+}
+
+.about .about-content .personal-info .langage-flag span 
+{
+    flex: 0 0 30%;
+    max-width: 0%;
+    margin-left: 65px;
+    color: var(--text-black-700);
+    font-size: 12px;
 }
 
 .about .about-content .personal-info .info-item p
@@ -1126,5 +1175,14 @@ max-width: 33.33%;
     }
     100%{
         color: var(--skin-color);
+    }
+}
+
+@keyframes spin {
+    0%{
+        transform:scale(1);
+    }
+    50% {
+        transform:scale(1.5);
     }
 }
