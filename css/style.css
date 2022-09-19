@@ -102,6 +102,16 @@ ul
     animation: boom-in 0.8s ease-out;
 }
 
+.active.fade
+{
+    animation: fade 5s ease-in-out;
+}
+
+.active.color-spot
+{
+    animation: color-spot 0.8s  infinite alternate;
+}
+
 .main-content
 {
     padding-left: 270px;
@@ -893,13 +903,15 @@ max-width: 33.33%;
 .contact .contact-info-item .icon .fa-brands:hover{
     transform:scale(3);;
     cursor: pointer;
-    color: var(--text-black-900); 
+    color: var(--text-black-900);
+    animation: step-end; 
 }
 
 .contact .contact-info-item .icon .fa:hover{
     transform:scale(3);
     cursor: pointer; 
     color: var(--text-black-900);
+    animation: step-end;
     
 }
 
@@ -1039,9 +1051,9 @@ max-width: 33.33%;
       transform: translateY(0);
       opacity: 1;
     }
-  }
+}
 
-  @keyframes fade-up {
+@keyframes fade-up {
     0% {
       transform: translateY(-50px);
       opacity: 0;
@@ -1050,9 +1062,9 @@ max-width: 33.33%;
       transform: translateY(0);
       opacity: 1;
     }
-  }
+}
 
-  @keyframes fade-left {
+@keyframes fade-left {
     0% {
       transform: translateX(-100px);
       opacity: 0;
@@ -1061,8 +1073,8 @@ max-width: 33.33%;
       transform: translateX(0);
       opacity: 1;
     }
-  }
-  @keyframes fade-right {
+}
+@keyframes fade-right {
     0% {
       transform: translateX(100px);
       opacity: 0;
@@ -1071,10 +1083,10 @@ max-width: 33.33%;
       transform: translateX(0);
       opacity: 1;
     }
-  }
+}
 
   @keyframes boom-in
-  {
+{
     0%{
         transform: translateZ(-50px);
         opacity: 0;
@@ -1086,4 +1098,33 @@ max-width: 33.33%;
         opacity: 1;
         transform: scale(1);
     }
-  }
+}
+
+  @keyframes fade
+{
+    0%{
+        opacity: 0;
+    }
+
+    25%{
+        opacity: 1;
+    }
+
+    25%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes color-spot
+{
+    0%{
+        color:var(--text-black-700);
+    }
+    100%{
+        color: var(--skin-color);
+    }
+}
