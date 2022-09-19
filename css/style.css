@@ -87,6 +87,14 @@ ul
     animation-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
+.zoom-spin
+{
+    animation-name: zoom-spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: 1;
+    animation-timing-function:linear;
+}
+
 .active.fade-bottom 
 {
     animation: fade-bottom 0.8s ease-out;
@@ -109,7 +117,7 @@ ul
 
 .active.fade
 {
-    animation: fade 5s ease-in-out;
+    animation: fade 0.8s ease-out;
 }
 
 .active.color-spot
@@ -1184,5 +1192,17 @@ max-width: 33.33%;
     }
     50% {
         transform:scale(1.5);
+    }
+}
+
+@keyframes zoom-spin {
+    0% {
+        transform: scale(0) translate(-2000px);
+        opacity: 0;
+    }
+    50%
+    {
+        transform:scale(2) translate(-200px);
+        opacity: 1;
     }
 }
