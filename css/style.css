@@ -64,6 +64,11 @@ ul
 {
     display: none !important;
 }
+
+.reveal
+{
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
 .main-content
 {
     padding-left: 270px;
@@ -114,6 +119,9 @@ a:link {
     font-weight: 700;
     position: relative;
 }
+
+
+
 
 .section-title h2::before
 {
@@ -325,6 +333,7 @@ a:link {
 {
     flex: 0 0 60%;
     max-width: 60%;
+    
 }
 
 h3.hello
@@ -987,3 +996,34 @@ max-width: 33.33%;
         max-width: 100%;
     }
 }
+
+@keyframes slideIn 
+{
+  0% {
+    transform: translateX(500px) scale(.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes slideUp 
+{
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

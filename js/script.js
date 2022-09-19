@@ -5,3 +5,8 @@ var typed = new Typed(".typing",{
     Backspeed:60,
     loop:true
 })
+
+/*================================= Reveal animation ================*/
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal")
+}
