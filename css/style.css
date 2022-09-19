@@ -69,23 +69,38 @@ ul
     position: relative;
     opacity: 0;
   }
-  .reveal.active {
+.reveal.active 
+{
     opacity: 1;
-  }
-  .active.fade-bottom {
-    animation: fade-bottom 0.8s ease-out;
-  }
-  .active.fade-left {
-    animation: fade-left 0.8s ease-out;
-  }
-  .active.fade-right {
-    animation: fade-right 0.8s ease-out;
-  }
+}
+.fade-up 
+ {
+    animation: fade-up 1s ease-out;
+ }
 
-  .active.boom-in
-  {
+.fade-bottom 
+{
+    animation: fade-bottom 0.8s ease-out;
+}
+
+.active.fade-bottom 
+{
+    animation: fade-bottom 0.8s ease-out;
+}
+.active.fade-left 
+{
+    animation: fade-left 0.8s ease-out;
+}
+
+.active.fade-right 
+{
+    animation: fade-right 0.8s ease-out;
+}
+
+.active.boom-in
+{
     animation: boom-in 0.8s ease-out;
-  }
+}
 
 .main-content
 {
@@ -1025,6 +1040,18 @@ max-width: 33.33%;
       opacity: 1;
     }
   }
+
+  @keyframes fade-up {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
   @keyframes fade-left {
     0% {
       transform: translateX(-100px);
