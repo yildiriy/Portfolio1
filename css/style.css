@@ -581,20 +581,32 @@ h3.hello span
     margin-right: 15px;
     margin-top: 10px;
 }
-.about .about-content .skills
+.about .about-content .soft-skills
 {
     flex: 0 0 40%;
     max-width: 40%;
     margin-top: 40px;
 }
 
-.about .about-content .skills .skill-item
+.about .about-content .soft-skills h4
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--skin-color);
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+}
+.about .about-content .soft-skills .skill-item
 {
     flex: 0 0 100%;
     max-width: 100%;
 }
 
-.about .about-content .skills .skill-item h5
+.about .about-content .soft-skills .skill-item h5
 {
     line-height: 40px;
     font-weight: 600;
@@ -603,7 +615,7 @@ h3.hello span
     text-transform: capitalize;
 }
 
-.about .about-content .skills .skill-item .progress
+.about .about-content .soft-skills .skill-item .progress
 {
     background-color: var(--bg-black-50);
     height: 7px;
@@ -612,22 +624,23 @@ h3.hello span
     position: relative;
 }
 
-.about .about-content .skills .skill-item
+.about .about-content .soft-skills .skill-item
 {
     margin-bottom: 25px;
 }
 
-.about .about-content .skills .skill-item .progress .progress-in
+.about .about-content .soft-skills .skill-item .progress .progress-in
 {
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
     border-radius: 4px;
-    background-color: var(--skin-color);
+    background: radial-gradient(black, var(--skin-color));
+    animation: movebar 10s linear infinite;
 }
 
-.about .about-content .skills .skill-item .skill-percent
+.about .about-content .soft-skills .skill-item .skill-percent
 {
     position: absolute;
     color: var(--text-black-900);
@@ -1206,5 +1219,15 @@ max-width: 33.33%;
     {
         transform:scale(2) translate(-200px);
         opacity: 1;
+    }
+}
+
+@keyframes movebar
+{
+    from{
+        background-position:0 0 ;
+    }
+    to{
+        background-position:1000px 0 ;
     }
 }
