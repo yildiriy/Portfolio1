@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 html {
     scroll-behavior: smooth;
   }
@@ -10,7 +11,6 @@ html {
     --bg-black-50:#e8dfec;
     --text-black-900:#302e4b;
     --text-black-700:#504e70;  
-
 }
 body.dark
 {
@@ -64,6 +64,12 @@ ul
 {
     display: none !important;
 }
+
+.hide
+{
+    display: none;
+}
+
 
 .reveal {
     position: relative;
@@ -233,6 +239,50 @@ a:link {
 {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    padding-top: 10%; /* Location of the box */
+    margin-left: 25%;
+    margin-top: 10%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width:70%; /* Full width */
+    height: 50%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    border: 2px solid var(--skin-color);
+  }
+
+  /* Modal Content */
+   .modal-content 
+ {
+    background-color: var(--bg-black-900);
+    margin: auto;
+    border: 2px solid var(--skin-color);
+    width: 80%;
+    color: var(--text-black-900);
+ }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
 /* aside */ 
 .aside 
 {
@@ -794,10 +844,50 @@ h3.hello span
     transition: all 0.3s ease;
 }
 
+
+.service .service-item .service-item-inner .button
+{
+    border: 2px solid #d2bdff;
+    height: 40px;
+    width: 100px;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    margin-left: 34%;
+}
+.service .service-item .service-item-inner .button::after
+    {
+        position: absolute;
+        top: 41%;
+        left: 50%;
+        transform: translate(-50%);
+        color: var(--skin-color);
+        transition: all 0.1s linear;
+    }
+    
+.service .service-item .service-item-inner .button::before 
+    {
+        content: "";
+        position: relative;
+        display: block;
+        height: 15px;
+        width: 15px;
+        background: #d2bdff;
+        box-shadow: 0px 0px 10px 3px #0ff;
+        margin-left: -8px;
+        margin-top: -8px;
+        opacity: 0;
+        transition: all 0.1s linear;
+        border-radius: 100%;
+        animation: star 1.3s linear infinite;
+    }
+
 .service .service-item .service-item-inner:hover
 {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
+
 
 .service .service-item .service-item-inner .icon
 {
@@ -838,11 +928,21 @@ h3.hello span
     text-transform: capitalize;
 }
 
+.service .service-item .service-item-inner h4:hover
+{
+    cursor: pointer;
+}
+
 .service .service-item .service-item-inner p
 {
     font-size: 16px;
     color: var(--text-black-700);
     line-height: 25px;
+}
+
+.service .service-item .service-item-inner p .fa-brands
+{
+    margin-right: 10px;
 }
 
 /* Portfolio */
@@ -1230,4 +1330,43 @@ max-width: 33.33%;
     to{
         background-position:1000px 0 ;
     }
+}
+
+@keyframes star 
+{
+    0% {
+      margin-left: -8px;
+      margin-top: -8px;
+    }
+    25% {
+      margin-left: 194px;
+      margin-top: -8px;
+    }
+
+    50% {
+      margin-left: 194px;
+      margin-top: 75px;
+    }
+    75% {
+      margin-left: -8px;
+      margin-top: 75px;
+    }
+    100% {
+      margin-left: -8px;
+      margin-top: -8px;
+    }
+
+}
+
+.service .service-item .service-item-inner .button:hover::before
+{
+      opacity: 1;
+      animation: star 1.3s linear infinite;
+}
+
+.service .service-item .service-item-inner .button:hover::after
+{
+      content: "I'M GLOWING";
+      text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 20px #82bedc,
+        0 0 30px #82bedc, 0 0 40px #82bedc, 0 0 50px #82bedc, 0 0 60px #82bedc;
 }
