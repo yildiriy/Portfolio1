@@ -2,8 +2,8 @@ document.body.classList.add('js-enabled');
 
 /* ======================= Typed headline ======================= */
 const typedTarget = document.querySelector('.typing');
-if (typedTarget) {
-  new Typed('.typing', {
+if (typedTarget && typeof window.Typed === 'function') {
+  new window.Typed('.typing', {
     strings: ['Architecte systèmes', "Leader IVVQ", "Créateur d'expériences"],
     typeSpeed: 70,
     backSpeed: 40,
