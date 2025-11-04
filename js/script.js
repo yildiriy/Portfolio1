@@ -1,81 +1,83 @@
-/*================================= typing animation ================*/
-const typed = new Typed(".typing", {
-    strings: ["", "Test Engineer", "Mechatronic Engineer", "Automatician", "Project Manager"],
-    typeSpeed: 80,
-    backSpeed: 60,
-    loop: true
+/* ======================= Typed headline ======================= */
+const typed = new Typed('.typing', {
+  strings: ['Systems Architect', 'Innovation Catalyst', 'Experience Engineer'],
+  typeSpeed: 70,
+  backSpeed: 45,
+  backDelay: 2000,
+  loop: true,
 });
 
-/*================================= Reveal animation ================*/
-function reveal() {
-    const reveals = document.querySelectorAll(".reveal");
+/* ======================= Mobile navigation ======================= */
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.site-nav');
 
-    reveals.forEach((element) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
+if (menuToggle && nav) {
+  const toggleMenu = () => {
+    const isOpen = nav.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  };
 
-        if (elementTop < windowHeight - elementVisible) {
-            element.classList.add("active");
-        } else {
-            element.classList.remove("active");
-        }
+  menuToggle.addEventListener('click', toggleMenu);
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
     });
+  });
 }
 
-window.addEventListener("scroll", reveal);
-reveal();
+/* ======================= Auto year ======================= */
+const yearTarget = document.getElementById('currentYear');
+if (yearTarget) {
+  yearTarget.textContent = new Date().getFullYear();
+}
 
-/*===================== Service modals ===============*/
-const modalTriggers = document.querySelectorAll(".modal-trigger");
-const modals = document.querySelectorAll(".modal");
-const closeButtons = document.querySelectorAll(".modal-close");
+/* ======================= Scroll hint subtle animation ======================= */
+const scroller = document.querySelector('.service-scroller');
+if (scroller) {
+  let hasAnimated = false;
 
-const toggleModalVisibility = (modal, shouldShow) => {
-    if (!modal) {
-        return;
-    }
+  const animateScroll = () => {
+    if (hasAnimated) return;
+    hasAnimated = true;
 
-    modal.style.display = shouldShow ? "block" : "none";
-    modal.setAttribute("aria-hidden", shouldShow ? "false" : "true");
+    scroller.scrollTo({ left: Math.min(180, scroller.scrollWidth), behavior: 'smooth' });
 
-    if (shouldShow) {
-        const closeButton = modal.querySelector(".modal-close");
-        if (closeButton && typeof closeButton.focus === "function") {
-            try {
-                closeButton.focus({ preventScroll: true });
-            } catch (error) {
-                closeButton.focus();
-            }
+    setTimeout(() => {
+      scroller.scrollTo({ left: 0, behavior: 'smooth' });
+    }, 800);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateScroll();
+          observerInstance.disconnect();
         }
-    }
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  observer.observe(scroller);
+}
+
+/* ======================= Keyboard focus ring helper ======================= */
+const handleFirstTab = (event) => {
+  if (event.key !== 'Tab') return;
+  document.body.classList.add('user-is-tabbing');
+  window.removeEventListener('keydown', handleFirstTab);
+  window.addEventListener('mousedown', handleMouseDownOnce);
 };
 
-modalTriggers.forEach((trigger) => {
-    const targetId = trigger.dataset.modal;
-    const targetModal = document.getElementById(targetId);
+const handleMouseDownOnce = () => {
+  document.body.classList.remove('user-is-tabbing');
+  window.removeEventListener('mousedown', handleMouseDownOnce);
+  window.addEventListener('keydown', handleFirstTab);
+};
 
-    if (targetModal) {
-        trigger.addEventListener("click", () => toggleModalVisibility(targetModal, true));
-    }
-});
-
-closeButtons.forEach((button) => {
-    const parentModal = button.closest(".modal");
-
-    button.addEventListener("click", () => toggleModalVisibility(parentModal, false));
-});
-
-modals.forEach((modal) => {
-    modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            toggleModalVisibility(modal, false);
-        }
-    });
-});
-
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-        modals.forEach((modal) => toggleModalVisibility(modal, false));
-    }
-});
+window.addEventListener('keydown', handleFirstTab);
