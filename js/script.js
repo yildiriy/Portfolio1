@@ -1,134 +1,160 @@
-/*================================= typing animation ================*/
-var typed = new Typed(".typing",{
-    strings:["","Test Engineer", "Mechatronic Engineer","Automatician", "Project Manager"],
-    typeSpeed:80,
-    Backspeed:60,
-    loop:true
-})
+document.body.classList.add('js-enabled');
 
-/*================================= Reveal animation ================*/
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-  
-    for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
-  
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("active");
-      } else {
-        reveals[i].classList.remove("active");
+/* ======================= Typed headline ======================= */
+const typedTarget = document.querySelector('.typing');
+if (typedTarget) {
+  new Typed('.typing', {
+    strings: ['Architecte systèmes', "Leader IVVQ", "Créateur d'expériences"],
+    typeSpeed: 70,
+    backSpeed: 40,
+    backDelay: 2000,
+    loop: true,
+  });
+}
+
+/* ======================= Mobile navigation ======================= */
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.site-nav');
+
+if (menuToggle && nav) {
+  const toggleMenu = () => {
+    const isOpen = nav.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    document.body.classList.toggle('scroll-hidden', isOpen);
+  };
+
+  menuToggle.addEventListener('click', toggleMenu);
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('scroll-hidden');
       }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 860 && nav.classList.contains('is-open')) {
+      nav.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('scroll-hidden');
     }
-  }
-  
-  window.addEventListener("scroll", reveal);
-
-
-// Get the modal
-var modal1 = document.getElementById("mySkills1");
-var modal2 = document.getElementById("mySkills2");
-var modal3 = document.getElementById("mySkills3");
-var modal4 = document.getElementById("mySkills4");
-var modal5 = document.getElementById("mySkills5");
-var modal6 = document.getElementById("mySkills6");
-
-// Get the button that opens the modal
-var btn1 = document.getElementById("iconSkills1");
-var btn2 = document.getElementById("iconSkills2");
-var btn3 = document.getElementById("iconSkills3");
-var btn4 = document.getElementById("iconSkills4");
-var btn5 = document.getElementById("iconSkills5");
-var btn6 = document.getElementById("iconSkills6");
-
-// Get the <span> element that closes the modal
-var span1 = document.getElementsByClassName("close1")[0];
-var span2 = document.getElementsByClassName("close2")[0];
-var span3 = document.getElementsByClassName("close3")[0];
-var span4 = document.getElementsByClassName("close4")[0];
-var span5 = document.getElementsByClassName("close5")[0];
-var span6 = document.getElementsByClassName("close6")[0];
-
-// When the user clicks the button, open the modal 
-btn1.onclick = function() {
-  modal1.style.display = "block";
-}
-btn2.onclick = function() {
-  modal2.style.display = "block";
-}
-btn3.onclick = function() {
-  modal3.style.display = "block";
-}
-btn4.onclick = function() {
-  modal4.style.display = "block";
-}
-btn5.onclick = function() {
-  modal5.style.display = "block";
-}
-btn6.onclick = function() {
-  modal6.style.display = "block";
+  });
 }
 
-// When the user clicks on <span> (x), close the modal
-span1.onclick = function() {
-  modal1.style.display = "none";
-}
-span2.onclick = function() {
-  modal2.style.display = "none";
+/* ======================= Auto year ======================= */
+const yearTarget = document.getElementById('currentYear');
+if (yearTarget) {
+  yearTarget.textContent = new Date().getFullYear();
 }
 
-span3.onclick = function() {
-  modal3.style.display = "none";
-}
+/* ======================= Reveal on scroll ======================= */
+const revealElements = document.querySelectorAll('.reveal-on-scroll');
+if (revealElements.length) {
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.25,
+        rootMargin: '0px 0px -80px 0px',
+      }
+    );
 
-span4.onclick = function() {
-  modal4.style.display = "none";
-}
-
-span5.onclick = function() {
-  modal5.style.display = "none";
-}
-
-span6.onclick = function() {
-  modal6.style.display = "none";
-}
-
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal1) {
-    modal1.style.display = "none";
+    revealElements.forEach((element) => revealObserver.observe(element));
+  } else {
+    revealElements.forEach((element) => element.classList.add('is-visible'));
   }
 }
 
-window.onclick = function(event) {
-  if (event.target == modal2) {
-    modal2.style.display = "none";
+/* ======================= Parallax layers ======================= */
+const parallaxLayers = document.querySelectorAll('[data-parallax-depth]');
+const calculateBaseTranslate = (depth) => window.scrollY * depth * -0.35;
+
+if (parallaxLayers.length) {
+  const handleParallax = () => {
+    const scrollY = window.scrollY;
+    parallaxLayers.forEach((layer) => {
+      const depth = parseFloat(layer.dataset.parallaxDepth) || 0;
+      const translateY = scrollY * depth * -0.35;
+      layer.dataset.baseTranslate = translateY;
+      layer.style.transform = `translate3d(0, ${translateY}px, 0)`;
+    });
+  };
+
+  handleParallax();
+  window.addEventListener('scroll', handleParallax, { passive: true });
+
+  const hero = document.querySelector('.hero');
+  if (hero && window.matchMedia('(pointer: fine)').matches) {
+    hero.addEventListener('pointermove', (event) => {
+      const rect = hero.getBoundingClientRect();
+      const offsetX = event.clientX - rect.left - rect.width / 2;
+      const offsetY = event.clientY - rect.top - rect.height / 2;
+      parallaxLayers.forEach((layer) => {
+        const depth = parseFloat(layer.dataset.parallaxDepth) || 0;
+        const baseTranslate = parseFloat(layer.dataset.baseTranslate) || calculateBaseTranslate(depth);
+        const translateX = (offsetX / rect.width) * depth * -60;
+        const translateY = baseTranslate + (offsetY / rect.height) * depth * -60;
+        layer.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+      });
+    });
+
+    hero.addEventListener('pointerleave', handleParallax);
   }
 }
 
-window.onclick = function(event) {
-  if (event.target == modal3) {
-    modal3.style.display = "none";
-  }
+/* ======================= Tilt cards ======================= */
+const tiltCards = document.querySelectorAll('.tilt-card');
+if (tiltCards.length && window.matchMedia('(pointer: fine)').matches) {
+  const tiltStrength = 10;
+  const handleEnter = (event) => {
+    event.currentTarget.classList.add('is-tilting');
+  };
+
+  const handleMove = (event) => {
+    const card = event.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const rotateY = ((x / rect.width) - 0.5) * tiltStrength;
+    const rotateX = ((y / rect.height) - 0.5) * -tiltStrength;
+    card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  };
+
+  const handleLeave = (event) => {
+    const card = event.currentTarget;
+    card.classList.remove('is-tilting');
+    card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg)';
+  };
+
+  tiltCards.forEach((card) => {
+    card.addEventListener('pointerenter', handleEnter);
+    card.addEventListener('pointermove', handleMove);
+    card.addEventListener('pointerleave', handleLeave);
+  });
 }
 
-window.onclick = function(event) {
-  if (event.target == modal4) {
-    modal4.style.display = "none";
-  }
-}
+/* ======================= Keyboard focus ring helper ======================= */
+const handleFirstTab = (event) => {
+  if (event.key !== 'Tab') return;
+  document.body.classList.add('user-is-tabbing');
+  window.removeEventListener('keydown', handleFirstTab);
+  window.addEventListener('mousedown', handleMouseDownOnce);
+};
 
-window.onclick = function(event) {
-  if (event.target == modal5) {
-    modal5.style.display = "none";
-  }
-}
+const handleMouseDownOnce = () => {
+  document.body.classList.remove('user-is-tabbing');
+  window.removeEventListener('mousedown', handleMouseDownOnce);
+  window.addEventListener('keydown', handleFirstTab);
+};
 
-window.onclick = function(event) {
-  if (event.target == modal6) {
-    modal6.style.display = "none";
-  }
-}
-
+window.addEventListener('keydown', handleFirstTab);
