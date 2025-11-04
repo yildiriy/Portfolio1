@@ -26,7 +26,7 @@ body
 
     line-height: 1.5;
     font-size: 16px;
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 *
@@ -285,87 +285,22 @@ a:link {
  }
   
   /* The Close Button */
-  .close1 {
+  .modal-close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close1:hover,
-  .close1:focus {
-    color: #000;
-    text-decoration: none;
+    border: none;
+    background: transparent;
+    line-height: 1;
     cursor: pointer;
+    padding: 0 6px;
   }
 
-  .close2 {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close2:hover,
-  .close2:focus {
+  .modal-close:hover,
+  .modal-close:focus {
     color: #000;
     text-decoration: none;
-    cursor: pointer;
-  }
-
-  .close3 {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close3:hover,
-  .close3:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .close4 {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close4:hover,
-  .close4:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .close5 {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close5:hover,
-  .close5:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .close6 {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close6:hover,
-  .close6:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
   }
 
   
@@ -542,7 +477,7 @@ h3.hello span
     color: var(--skin-color);
 }
 
-.h3.my-profession
+h3.my-profession
 {
     font-size: 30px;
     margin: 15px 0;
@@ -553,10 +488,9 @@ h3.hello span
     color: var(--skin-color);
 }
 
-.home-info p 
+.home-info p
 {
     margin-bottom: 70px;
-    line-break: ".";
     font-size: 15px;
     color: var(--text-black-700);
 }
@@ -935,18 +869,23 @@ h3.hello span
 {
     border: 2px solid var(--bg-black-900);
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    display: block;
-    text-align: center;
-    margin: 10px auto 0;
+    height: 36px;
+    width: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto 0;
     background-color: var(--skin-color);
-
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s ease;
 }
 
-.service .service-item .service-item-inner .button:hover
+.service .service-item .service-item-inner .button:hover,
+.service .service-item .service-item-inner .button:focus
 {
-    cursor: pointer;
+    transform: scale(1.05);
 }
 
 
