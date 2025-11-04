@@ -2,543 +2,312 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-<!-- ================== CSS Files ================-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusuf Yildirim — Futurist Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/skins/color-1.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <!-- ===== Style Switcher =====-->
-    <link rel="stylesheet" href="css/style-switcher.css">
-    <link rel="stylesheet" href="css/skins/color-1.css" class="alternate-style" title="color-1" disabled>
-    <link rel="stylesheet" href="css/skins/color-2.css" class="alternate-style" title="color-2" disabled>
-    <link rel="stylesheet" href="css/skins/color-3.css" class="alternate-style" title="color-3" disabled>
-    <link rel="stylesheet" href="css/skins/color-4.css" class="alternate-style" title="color-4" disabled>
-    <link rel="stylesheet" href="css/skins/color-5.css" class="alternate-style" title="color-5" disabled>
-
 </head>
-<body class="dark">
-    
-    <!-- ================ Main container Start ==================-->
-    <div class="main-container">
-        <!--===== Aside Start ======-->
-        <div class="aside">
-            <div class="logo spin">
-                <a href="#"><span>Y</span>Y</a>
+<body>
+    <div class="background-grid" aria-hidden="true"></div>
+    <div class="background-glow" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+        <a class="brand" href="#home" aria-label="Go to home">
+            <span class="brand-mark">YY</span>
+            <span class="brand-text">Yusuf Yildirim</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="site-nav" aria-label="Primary">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a class="cta" href="https://drive.google.com/file/d/13a5c_6DNgB41Yx_nxJ0jLNZCJFaZwPrX/view?usp=sharing" target="_blank" rel="noopener">Download CV</a>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">Multidisciplinary Engineer · Future-focused Maker</p>
+                <h1>Building seamless systems that feel <span class="highlight">next century</span>.</h1>
+                <p class="lead">
+                    I’m Yusuf Yildirim, a mechatronics engineer and test leader turning complex challenges into luminous digital experiences.
+                    Currently crafting high-reliability solutions with a passion for automation, immersive interfaces, and human-centered innovation.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn primary" href="#projects">Explore my work</a>
+                    <a class="btn ghost" href="#contact">Start a project</a>
+                </div>
+                <dl class="hero-metrics" aria-label="Career highlights">
+                    <div>
+                        <dt>Years shaping systems</dt>
+                        <dd>8+</dd>
+                    </div>
+                    <div>
+                        <dt>Industries impacted</dt>
+                        <dd>Automotive · Defense · Tech</dd>
+                    </div>
+                    <div>
+                        <dt>Key roles</dt>
+                        <dd><span class="typing" aria-live="polite">Engineer</span></dd>
+                    </div>
+                </dl>
             </div>
-             <div class="nav-toggler">
-                <span></span>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <img src="portrait.avif" alt="Portrait of Yusuf Yildirim" loading="lazy">
+                    <div class="floating-card__glow"></div>
+                    <p>Designing resilient, intelligent and human interfaces.</p>
+                </div>
             </div>
-            <ul class="nav">
-                <li><a href="#home" class="active"> <i class="fa fa-home"></i> Home</a></li>
-                <li><a href="#about"> <i class="fa fa-user"></i> About</a></li>
-                <li><a href="#services"> <i class="fa fa-list"></i> Services</a></li>
-                <!-- <li><a href="#portfolio"> <i class="fa fa-briefcase"></i>Portfolio</a></li> -->
-                <li><a href="#contact"> <i class="fa fa-comments"></i> Contact</a></li>
-            </ul>
-            
-        </div>
-        <!--===== Aside End ======-->
-        <!--===== Main content Start =====-->
-        <div class="main-content">
-            <!-- ==== Home section Start-->
-            <section class="home section" id="home">
-                <div class="container">
-                    <div class="row">
-                        <div class="home-info padd-15 fade-up">
-                            <h3 class="hello">Hi, my name is <span class="name">Yusuf Yildirim</span></h3>
-                            <h3 class="my-profession"> I have some skills as <span class="typing"> Test engineer</span></h3>
-                            <p> Welcome to my website.
-                               <br> I really like to take up new challenges and to move forward & learn new skills.
-                               <br> If you want to learn more about me, scroll down.
-                            </p>
-                            <a href="#about" class="btn hire-me">More about Me</a>
-                        </div>
-                        <div class="home-img padd-15 zoom-spin">
-                            <img src="Photo-id-ps.png" alt="">
-                        </div>
+        </section>
+
+        <section class="section about" id="about">
+            <div class="section-heading">
+                <p class="eyebrow">About</p>
+                <h2>Engineer by craft, storyteller by vision.</h2>
+            </div>
+            <div class="about-grid">
+                <article class="about-panel">
+                    <h3>Mission</h3>
+                    <p>
+                        Empower teams with automated systems that anticipate needs and inspire confidence. I blend mechatronics expertise with digital craftsmanship to deliver immersive, measurable experiences.
+                    </p>
+                </article>
+                <article class="about-panel">
+                    <h3>Credentials</h3>
+                    <ul>
+                        <li>Mechatronics Engineer — ESIGELEC</li>
+                        <li>Integration &amp; Verification Lead — THALES</li>
+                        <li>Test Engineer — JTEKT Europe</li>
+                        <li>Automation Specialist — Renault Group</li>
+                    </ul>
+                </article>
+                <article class="about-panel">
+                    <h3>Capabilities</h3>
+                    <ul class="chips">
+                        <li>Automation strategy</li>
+                        <li>Hardware-in-the-loop</li>
+                        <li>UX prototyping</li>
+                        <li>Python &amp; Matlab</li>
+                        <li>Data storytelling</li>
+                        <li>Cross-team leadership</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section expertise" id="expertise">
+            <div class="section-heading">
+                <p class="eyebrow">Expertise</p>
+                <h2>Signature services that fuse software, hardware &amp; experience.</h2>
+            </div>
+            <div class="scroll-hint" aria-hidden="true">Drag to explore</div>
+            <div class="service-scroller">
+                <article class="service-card">
+                    <h3>Autonomous Testing Labs</h3>
+                    <p>Designing adaptive test environments powered by real-time analytics, enabling faster certification cycles.</p>
+                    <ul>
+                        <li>IVVQ strategy &amp; execution</li>
+                        <li>Sensor fusion validation</li>
+                        <li>Digital twin integrations</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <h3>Immersive Experience Systems</h3>
+                    <p>Translating industrial flows into interfaces that feel intuitive, tactile, and unmistakably futuristic.</p>
+                    <ul>
+                        <li>Spatial UI prototyping</li>
+                        <li>Interaction design</li>
+                        <li>Accessibility guardianship</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <h3>Automation Enablement</h3>
+                    <p>Blueprinting modular automation stacks that accelerate production without sacrificing human insight.</p>
+                    <ul>
+                        <li>PLC &amp; robotics programming</li>
+                        <li>Continuous delivery of firmware</li>
+                        <li>Lifecycle documentation</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <h3>Innovation Leadership</h3>
+                    <p>Aligning stakeholders, roadmaps, and technology around bold visions grounded in measurable outcomes.</p>
+                    <ul>
+                        <li>Programme steering</li>
+                        <li>Cross-discipline facilitation</li>
+                        <li>Risk &amp; compliance orchestration</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section experience" id="experience">
+            <div class="section-heading">
+                <p class="eyebrow">Experience</p>
+                <h2>Leading missions where precision meets imagination.</h2>
+            </div>
+            <div class="timeline">
+                <article class="timeline-event">
+                    <div class="timeline-meta">
+                        <span class="timeline-year">2020 — Present</span>
+                        <span class="timeline-company">THALES</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Integration, Verification &amp; Qualification Manager</h3>
+                        <p>Directed IVVQ strategy across mission-critical systems, orchestrating international labs, and championing resilience-first design.</p>
+                        <ul>
+                            <li>Launched full-spectrum test campaigns covering mechanical, electrical, and environmental criteria.</li>
+                            <li>Built cross-functional rituals that reduced feedback loops by 35%.</li>
+                            <li>Mentored teams on risk mitigation and traceability excellence.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="timeline-event">
+                    <div class="timeline-meta">
+                        <span class="timeline-year">2019 — 2020</span>
+                        <span class="timeline-company">JTEKT Europe</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Test Engineer — Smart Steering Systems</h3>
+                        <p>Engineered endurance and robustness campaigns for automotive steering, translating critical data into actionable strategy.</p>
+                        <ul>
+                            <li>Automated reporting pipelines for multi-environment tests.</li>
+                            <li>Collaborated with OEM partners to align hardware and UX requirements.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="timeline-event">
+                    <div class="timeline-meta">
+                        <span class="timeline-year">2015 — 2019</span>
+                        <span class="timeline-company">Renault Group</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Automation &amp; Test Systems Analyst</h3>
+                        <p>Standardised processes for chassis test benches and architected new validation platforms, bridging mechanical and digital worlds.</p>
+                        <ul>
+                            <li>Defined end-to-end commissioning for a flagship test bench.</li>
+                            <li>Created automation documentation and training programmes for cross-site adoption.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section projects" id="projects">
+            <div class="section-heading">
+                <p class="eyebrow">Selected projects</p>
+                <h2>Concepts crafted with precision and expressive tech.</h2>
+            </div>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-media">
+                        <span class="project-tag">Command Center</span>
+                        <p class="project-mock">Adaptive control dashboard for mission-critical avionics.</p>
+                    </div>
+                    <div class="project-body">
+                        <h3>Helios Ops Suite</h3>
+                        <p>Built a glassmorphic interface unifying telemetry, AI insights, and manual overrides in a single panoramic experience.</p>
+                        <ul>
+                            <li>React + Three.js simulation sandbox</li>
+                            <li>Fail-safe automation workflows</li>
+                            <li>ISO 27001 aligned governance</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-media">
+                        <span class="project-tag">Industrial Automation</span>
+                        <p class="project-mock">Self-healing production line orchestrator.</p>
+                    </div>
+                    <div class="project-body">
+                        <h3>NovaLine Orchestrator</h3>
+                        <p>Devised predictive maintenance intelligence blending PLC data streams with machine learning for near-zero downtime.</p>
+                        <ul>
+                            <li>Python + OPC-UA integration</li>
+                            <li>Edge analytics dashboards</li>
+                            <li>Operator-first experience design</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-media">
+                        <span class="project-tag">Innovation Lab</span>
+                        <p class="project-mock">Immersive prototyping arena for R&amp;D squads.</p>
+                    </div>
+                    <div class="project-body">
+                        <h3>Aether Lab</h3>
+                        <p>Co-led a multi-sensory prototyping space enabling teams to visualise systems in VR/AR while validating hardware feedback loops.</p>
+                        <ul>
+                            <li>Unity + IoT sensor fusion</li>
+                            <li>Experience metrics dashboards</li>
+                            <li>Executive storytelling toolkit</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section contact" id="contact">
+            <div class="section-heading">
+                <p class="eyebrow">Contact</p>
+                <h2>Let’s architect the future, together.</h2>
+                <p class="lead">Drop me a line about your upcoming challenge — I respond within 48 hours.</p>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-card">
+                    <h3>Direct channels</h3>
+                    <ul>
+                        <li><a href="mailto:yildiriy@gmail.com"><i class="fa-regular fa-envelope"></i>Email</a></li>
+                        <li><a href="https://fr.linkedin.com/in/yy69" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i>LinkedIn</a></li>
+                        <li><a href="https://drive.google.com/file/d/13a5c_6DNgB41Yx_nxJ0jLNZCJFaZwPrX/view?usp=sharing" target="_blank" rel="noopener"><i class="fa-regular fa-file-lines"></i>Curriculum Vitae</a></li>
+                    </ul>
+                    <div class="contact-badge">
+                        <span>Lyon, France</span>
+                        <span>UTC+1</span>
                     </div>
                 </div>
-            </section>
-            <!-- ==== Home section End-->
-            <!-- ==== About section Start-->
-            <section class="about section" id="about">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>About Me</h2>
-                        </div>
+                <form class="contact-form" method="post" action="contact.php">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
                     </div>
-                    <div class="row">
-                        <div class="about-content padd-15 ">
-                            <div class="row">
-                                <div class="about-text padd-15 reveal fade-left">
-                                    <h3>I'm Yusuf Yildirim and <span> Mechatronics Engineer</span></h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, mollitia commodi ea aliquam iure, nostrum numquam,
-                                    architecto labore eius non modi itaque doloribus. Cumque, ipsum accusantium dolor veniam,
-                                    voluptatibus omnis sequi ad explicabo impedit provident nam iusto itaque delectus saepe exercitationem nemo. Vel, impedit autem. Soluta rem quis eum.
-                                    Adipisci hic atque sunt. Numquam, consectetur?</p>
-                                </div>
-                            </div>  
-                            <div class="row">
-                                <div class="personal-info padd-15 reveal fade-left">
-                                    <div class="row">
-                                        <div class="info-item padd-15 reveal fade-left">
-                                            <p>Birthday: <span>02 Oct 1995</span></p>
-                                        </div>
-                                        <div class="info-item padd-15 reveal fade-left">
-                                            <p>Age: <span>27</span></p>
-                                        </div>
-                                        <div class="info-item padd-15 reveal fade-left">
-                                            <p>Email: <span>yildiriy@gmail.com</span></p>
-                                        </div>
-                                        <div class="info-item padd-15 reveal fade-left">
-                                            <p>Phone: <span>+33 7 50 30 03 70</span></p>
-                                        </div>
-                                        <div class="info-item padd-15 reveal fade-left">
-                                            <p>City: <span>Lyon, France </span></p>
-                                        </div>
-                                    </div>
-                                <div class="row">
-                                    <div class="info-item langage-title padd-15"> Langages</div>
-                                    <div class="info-item padd-15 langage-flag reveal fade-left">
-                                        <img src="Flag_of_France.png" alt=""> 
-                                        <span>French</span>
-                                    </div>
-                                    <div class="info-item padd-15 langage-flag reveal fade-left">
-                                        <img src="Flag_of_England.png" alt="">
-                                        <span>English</span>
-                                    </div>
-                                    <div class="info-item padd-15 langage-flag reveal fade-left">
-                                        <img src="Flag_of_Turkey.png" alt="">
-                                        <span>Turkish</span>
-                                    </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="buttons padd-15">
-                                            <a href="#" class="btn hidden"> Download CV </a>
-                                            <a href="#contact" class="btn hire-me">Contact Me</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="soft-skills padd-15"> 
-                                    <h4>Soft Skills</h4> 
-                                    <div class="row">
-                                        <div class="skill-item padd-15 reveal fade-bottom">
-                                            <h5>Python</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 76%;"></div>
-                                                <div class="skill-percent">76%</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item padd-15 reveal fade-bottom">
-                                            <h5>Solidworks/Catia</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 86%;"></div>
-                                                <div class="skill-percent">86%</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item padd-15 reveal fade-bottom">
-                                            <h5>Industrial automation</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 76%;"></div>
-                                                <div class="skill-percent">76%</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item padd-15 reveal fade-bottom">
-                                            <h5>Matlab</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 60%;"></div>
-                                                <div class="skill-percent">60%</div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-item padd-15 reveal fade-bottom">
-                                            <h5>Html/CSS</h5>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 60%;"></div>
-                                                  <div class="skill-percent">60%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>  
-                            </div>
-                            <div class="row">
-                                <div class="education padd-15 reveal fade-left">
-                                    <h3 class="title">Education</h3>
-                                    <div class="row">
-                                        <div class="timeline-box padd-15">
-                                            <div class="timeline shadow-dark">
-                                                <!-- Timeline Item-->
-                                                <div class="timeline-item">
-                                                    <div class="circle-dot"></div>
-                                                        <h3 class="timeline-date">
-                                                            <i class="fa fa-calendar"></i> 2015 - 2019
-                                                        </h3>
-                                                        <h4 class="timeline-title">Engineering School - ESIGELEC</h4>
-                                                        <p class="timeline-text">Speciality: Mechatronics and Project Management <br>
-                                                            Courses: Mechanic, Electronic, Programmation, Technical Projects <br>
-                                                            The cursus have been done in apprenticeship at RENAULT
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@visionary.co" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Project focus</label>
+                        <input type="text" id="subject" name="subject" placeholder="Automation, UX Lab, Prototype…">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about the challenge and timeline." required></textarea>
+                    </div>
+                    <button class="btn primary" type="submit">Send message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-                                                        </p>
-                                                </div>
-                                                <!-- Timeline Item-->
-                                                <div class="timeline-item">
-                                                    <div class="circle-dot"></div>
-                                                        <h3 class="timeline-date">
-                                                            <i class="fa fa-calendar"></i> 2013 - 2015
-                                                        </h3>
-                                                        <h4 class="timeline-title">Preparatory class - MPSI - MP - Lycée Lalande</h4>
-                                                        <p class="timeline-text">Mathematics, Physics, Informatic, Industrial Sciences</p>
-                                                </div>
-                                                <!-- Timeline Item-->
-                                                <div class="timeline-item">
-                                                    <div class="circle-dot"></div>
-                                                        <h3 class="timeline-date">
-                                                            <i class="fa fa-calendar"></i> 2010 - 2013
-                                                        </h3>
-                                                        <h4 class="timeline-title">Scientific Baccalaureate - Lycée Val-de-Saône</h4>
-                                                        <p class="timeline-text"> Main French High school courses with more scientific specialities <br>
-                                                                                    Options: Mathematics <br>
-                                                                                    Graduated with honours
+    <footer class="site-footer">
+        <p>© <span id="currentYear"></span> Yusuf Yildirim. Crafted for tomorrow.</p>
+        <a href="#top" class="back-to-top" aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+    </footer>
 
-                                                         </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="experience padd-15 reveal fade">
-                                    <h3 class="title">Experience</h3>
-                                    <div class="row">
-                                        <div class="timeline-box padd-15">
-                                            <div class="timeline shadow-dark">
-                                                <!-- Timeline Item-->
-                                                <div class="timeline-item">
-                                                    <div class="circle-dot"></div>
-                                                        <h3 class="timeline-date">
-                                                            <i class="fa fa-calendar"></i> 2019 - Today
-                                                        </h3>
-                                                        
-                                                            <summary><h4 class="timeline-title"> EXPLEO REGIONS</h4></summary>
-                                                            
-                                                            <p class="timeline-text">
-                                                                <h5 class="experience-entreprise">• THALES – 2020-2022 </h5>
-                                                                <h6 class="experience-title">Integration Validation,Verification & Qualifacation Manager</h6>
-                                                                <details>
-                                                                • Définition de la stratégie & planning IVVQ <br>
-                                                                • Campagne d’essais mécaniques, electriques, environnementaux, de robustesse. <br>
-                                                                • Coordination des activités IVVQ (Priorité, moyens d’essais, gestion des ressources) <br>
-                                                                • Pilotage des essais internes & en laboratoires externes (démarchages, suivi de la prestation, facturation) <br>
-                                                                • Investigation sur les problématiques rencontrées. <br> 
-                                                                <br>
-                                                                </details>
-                                                               <h5 class="experience-entreprise"> • JTEKT - 2019-2020 </h5>
-                                                               <h6 class="experience-title"> Test Engineer on car steering wheel systems <br></h6>
-                                                               <details>
-                                                                • Réalisation de la campagne d’essais pour un
-                                                                client <br>
-                                                                • Réalisation des essais (Endurance, mécaniques, robustesse, environnementaux) <br>
-                                                                • Analyse & traitement des résultats, rédaction des rapports d’essais. <br>
-                                                                • Présentation des résultats & échange avec le client lors des revus bi-mensuels
-
-                                                            </details>
-                                                            </p>
-                                                           
-                                                </div>
-                                                <!-- Timeline Item-->
-                                                <div class="timeline-item">
-                                                    <div class="circle-dot"></div>
-                                                        <h3 class="timeline-date">
-                                                            <i class="fa fa-calendar"></i> 2015 - 2019
-                                                        </h3>
-                                                        <h4 class="timeline-title">Renault Group</h4>
-                                                        <p class="timeline-text"> 
-                                                            <h5 class="experience-entreprise">2015 - 2019 </h5>
-                                                            <h6 class="experience-title">Analyste Moyens d’essais/Bancs Liaisons au sol (LAS)</h6>
-                                                            <details>
-                                                                • Normalisation des processus d’essais de l’équipe <br>
-                                                                • Automatisation du traitement & de l’archivage 
-                                                                des données d’essais. <br>
-                                                                • Rédaction des documents techniques <br>
-                                                            </details> <br>
-                                                                <h6 class="experience-title"> • Gestion de projet sur la mise en place d’un banc
-                                                                d’essai </h6>
-                                                                <details>
-                                                                • Rédaction d’un cahier des charges <br>
-                                                                • Développement des procédures d’essais <br>
-                                                                • Application des procédures (phase test) <br>
-                                                                • Développement du post-traitement des résultats <br>
-                                                                • Rédaction de documents techniques (mode
-                                                                opératoire, formations)<br>
-                                                                • Communication avec les interlocuteurs (Service
-                                                                Maintenance, clients, fournisseur) <br>
-                                                                • Mise en place d’un planning de formation
-                                                            </details>
-                                                            </details>
-                                                        </p>
-                                                </div>
-                                                <!-- Timeline Item-->
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- ==== About section End-->
-            <!-- ==== Services section Start-->
-            <section class="service section" id="services">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Services</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <!-- ======= Service item Start ======-->
-                        <div class="service-item padd-15 reveal boom-in">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                                <h4>Industrial programming</h4>
-                                <div class="button" id="iconSkills1"></div>
-                                <div class="modal reveal fade-up" id="mySkills1">
-                                    <div class="modal-content">
-                                        <h5> Industrial programming</h5>
-                                        <p>Automate programming for actuati</p>
-                                        <span class="close1">&times;</span>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!-- ======= Service item End ======-->
-                        <!-- ======= Service item Start ======-->
-                        <div class="service-item padd-15 reveal boom-in">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                                <h4>Web design</h4>
-                                <div class="button" id="iconSkills2"></div>
-                                <div class="modal reveal fade-up" id="mySkills2">
-                                    <div class="modal-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, fugiat. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis perspiciatis quasi, minus qui nemo voluptate? Facere non, nam omnis vel perspiciatis est, culpa consequuntur molestias quia officiis voluptas a aperiam consectetur odio, eos assumenda magnam inventore id vitae porro aspernatur repellat facilis? Consequuntur, exercitationem fugiat.</p>
-                                        <span class="close2">&times;</span>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!-- ======= Service item End ======-->
-                        <!-- ======= Service item Start ======-->
-                        <div class="service-item padd-15 reveal boom-in">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                                <h4>Web design</h4>
-                                <div class="button" id="iconSkills3"></div>
-                                <div class="modal reveal fade-up" id="mySkills3">
-                                    <div class="modal-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, fugiat.</p>
-                                        <span class="close3">&times;</span>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!-- ======= Service item End ======-->
-                        <!-- ======= Service item Start ======-->
-                        <div class="service-item padd-15 reveal boom-in">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                                <h4>Web design</h4>
-                                <div class="button" id="iconSkills4"></div>
-                                <div class="modal reveal fade-up" id="mySkills4">
-                                    <div class="modal-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, fugiat.</p>
-                                        <span class="close4">&times;</span>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!-- ======= Service item End ======-->
-                        <!-- ======= Service item Start ======-->
-                       <div class="service-item padd-15 reveal boom-in">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                                <h4>Web design</h4>
-                                <div class="button" id="iconSkills5"></div>
-                                <div class="modal reveal fade-up" id="mySkills5">
-                                    <div class="modal-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, fugiat.</p>
-                                        <span class="close5">&times;</span>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!-- ======= Service item End ======-->
-                        <!-- ======= Service item Start ======-->
-                        <div class="service-item padd-15 reveal boom-in">
-                            <div class="service-item-inner">
-                                <div class="icon">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                                <h4>Web design</h4>
-                                <div class="button" id="iconSkills6"></div>
-                                <div class="modal reveal fade-up" id="mySkills6">
-                                    <div class="modal-content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, fugiat.</p>
-                                        <span class="close6">&times;</span>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                        <!-- ======= Service item End ======-->
-                    </div>
-                </div>
-            </section>
-            <!-- ==== Services section End-->
-            <!-- ==== Portfolio section Start-->
-            <section class="portfolio section hidden" id="portfolio">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Portfolio</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="portfolio-heading">
-                            <h2>My last Projects:</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <!-- ===== Portfolio item start-->
-                        <div class="portfolio-item padd-15">
-                            <div class="portfolio-item-inner shadow-dark">
-                                <div class="portfolio-img">
-                                    <img src="" alt="">
-                                </div>
-                            </div>     
-                        </div>
-                        <!-- ===== Portfolio item end-->
-                    </div>
-                </div>
-            </section>
-            <!-- ==== Portfolio section End-->
-            <!-- ==== Contact section Start-->
-            <section class="contact section" id="contact">
-                <div class="container">
-                    <div class="row">
-                        <div class="section-title padd-15">
-                            <h2>Contact Me</h2>
-                        </div>
-                    </div>
-                    <h3 class="contact-title padd-15">Have you any question</h3>
-                    <h4 class="contact-sub-title padd-15">I'm at your services</h4>
-                    <h5 class="contact-advice padd-15 reveal color-spot">Click on the logo to proceed</h5>
-                    <div class="row">
-                        <!--=== Contact info item start-->
-                        <div class="contact-info-item padd-15 reveal fade-right">
-                            <div class="contact-info-item-inner">
-                                <div class="icon"><a href="mailto:yildiriy@gmail.fr" class="fa fa-envelope reveal color-spot"></a></div>
-                                <h4>Email</h4>
-                                <p hidden>yildiriy@gmail.com</p>
-                            </div>
-                        </div>
-                        <!--=== Contact info item End-->
-                        <div class="contact-info-item padd-15 reveal fade-right">
-                            <div class="contact-info-item-inner">
-                                <div class="icon"><a href="https://drive.google.com/file/d/13a5c_6DNgB41Yx_nxJ0jLNZCJFaZwPrX/view?usp=sharing" class="fa fa-file reveal color-spot"></a></div>
-                                <h4>CV</h4>
-                                <p hidden>Click to open my CV</p>
-                            </div>
-                        </div>
-                        <!--=== Contact info item End-->
-                        <div class="contact-info-item padd-15 reveal fade-right">
-                            <div class="contact-info-item-inner">
-                                <div class="icon"><a href="https://fr.linkedin.com/in/yy69" class="fa-brands fa-linkedin-in reveal color-spot"></a></div>
-                                <h4>Linkedin</h4>
-                                <p hidden>/YY69</p>
-                            </div>
-                        </div>
-                        <!--=== Contact info item End-->
-                    </div>
-                    <h3 class="contact-title padd-15"> SEND ME AN EMAIL</h3>
-                    <h4 class="contact-sub-title padd-15"> I'M VERY RESPONSIVE TO MESSAGES</h4>
-
-                    <!--===== Contact Form-->
-                    <div class="row">
-                        <form method="post" action="contact.php">
-                            <div class="contact-form padd-15 hidden">
-                                <div class="row">
-                                    <div class="form-item col-6 padd-15">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Name" id="name">
-                                        </div>
-                                    </div>
-                                    <div class="form-item col-6 padd-15">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email" id="email">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-item col-12 padd-15">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Subject" id="subject">
-                                        </div>
-                                    </div>
-                                    <div class="form-item col-12 padd-15">
-                                    <div class="form-group">
-                                        <textarea name="message" class="form-control" id="message" placeholder="Message"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-item col-12 padd-15">
-                                     <button type="submit" class="btn" value="Send">Send Message</button>
-                                 </div>
-                                </div>
-                            </div>
-                        </form>
-                        </div>
-                </div>
-            </section>
-            <!-- ==== Contact section End-->
-
-            
-        </div>
-        <!--===== Main content End ======-->
-    </div>
-    <!-- ================ Main container End ==================--> 
-    <!--================= Style Switcher Start ==========-->
-    <div class="style-switcher">
-        <div class="style-switcher-toggler s-icon">
-            <i class="fas fa-cog fa-spin"></i>
-        </div>
-        <div class="day-night s-icon">
-            <i class="fas "></i>
-        </div>
-        <h4>Theme Colors</h4>
-        <div class="colors">
-            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
-            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
-            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
-            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
-            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
-        </div>
-    </div>
-    <!--================= Style Switcher End ==========-->
-    <!-- ================ JS Files ==================-->   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
-    <script src="js/script.js"></script>
-    <script src="js/style-switcher.js"></script>
-
-
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" integrity="sha512-Cx4YBIuNxV+4CSkiqhSSjMBDuNIQP5CKEM5Qn2ATmNnS/xPbbGr3HdWu3UwG+329xNXm/SuKD5dBwWLeLKw3Mw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
