@@ -53,26 +53,53 @@ if (yearTarget) {
 /* ======================= Reveal on scroll ======================= */
 const revealElements = document.querySelectorAll('.reveal-on-scroll');
 if (revealElements.length) {
+  const revealImmediately = (element) => element.classList.add('is-visible');
+
+  const checkVisibility = () => {
+    let hasHidden = false;
+    revealElements.forEach((element) => {
+      if (element.classList.contains('is-visible')) return;
+      const rect = element.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const inView = rect.top <= viewportHeight * 0.9 && rect.bottom >= viewportHeight * 0.1;
+      if (inView) {
+        revealImmediately(element);
+      } else {
+        hasHidden = true;
+      }
+    });
+
+    if (!hasHidden) {
+      window.removeEventListener('scroll', checkVisibility);
+      window.removeEventListener('resize', checkVisibility);
+    }
+  };
+
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            revealImmediately(entry.target);
             observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.25,
-        rootMargin: '0px 0px -80px 0px',
+        threshold: 0.2,
+        rootMargin: '0px 0px -60px 0px',
       }
     );
 
     revealElements.forEach((element) => revealObserver.observe(element));
+    window.addEventListener('load', checkVisibility, { once: true });
   } else {
-    revealElements.forEach((element) => element.classList.add('is-visible'));
+    revealElements.forEach(revealImmediately);
   }
+
+  window.addEventListener('scroll', checkVisibility, { passive: true });
+  window.addEventListener('resize', checkVisibility);
+  checkVisibility();
 }
 
 /* ======================= Parallax layers ======================= */
