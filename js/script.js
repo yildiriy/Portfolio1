@@ -1,3 +1,5 @@
+document.body.classList.add('js-enabled');
+
 /* ======================= Typed headline ======================= */
 const typedTarget = document.querySelector('.typing');
 if (typedTarget) {
@@ -51,22 +53,26 @@ if (yearTarget) {
 /* ======================= Reveal on scroll ======================= */
 const revealElements = document.querySelectorAll('.reveal-on-scroll');
 if (revealElements.length) {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.25,
-      rootMargin: '0px 0px -80px 0px',
-    }
-  );
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.25,
+        rootMargin: '0px 0px -80px 0px',
+      }
+    );
 
-  revealElements.forEach((element) => revealObserver.observe(element));
+    revealElements.forEach((element) => revealObserver.observe(element));
+  } else {
+    revealElements.forEach((element) => element.classList.add('is-visible'));
+  }
 }
 
 /* ======================= Parallax layers ======================= */
